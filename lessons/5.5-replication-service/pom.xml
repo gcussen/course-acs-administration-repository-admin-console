@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- There is rarely a reason to edit this file -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>course-acs-administration-repository-admin-console-5.5-replication-service</artifactId>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.alfresco.training.courses</groupId>
+		<artifactId>course-acs-administration-repository-admin-console</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../..</relativePath>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.repaint.maven</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<version>2.16</version>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>com.alfresco.training:alfresco-training-lesson-tile:[1.0,2.0)</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

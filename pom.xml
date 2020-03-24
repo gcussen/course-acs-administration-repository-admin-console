@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.alfresco.training.courses</groupId>
+	<artifactId>course-acs-administration-repository-admin-console</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.alfresco.training</groupId>
+		<artifactId>alfresco-training-course-parent</artifactId>
+		<version>[2.0.0,2.1.0)</version>
+	</parent>
+
+	<properties>
+		<!-- These 'course' properties are injected into certain pages -->
+		<course.estimatedTimeMinutes>30</course.estimatedTimeMinutes>
+		<course.difficulty>Foundation</course.difficulty>
+		<course.version.earliest>Alfresco Content Services v4.2</course.version.earliest>
+		<course.version.latest>Latest</course.version.latest>
+		<course.version.dev>Alfresco Content Services v6.2</course.version.dev>
+		<course.buildDate>${maven.build.timestamp}</course.buildDate>
+
+        	<!-- The following properties are defaulted by the parent POM -->
+		<!--
+                <git.repo.baseUrl>https://api.github.com</git.repo.baseUrl>
+                <git.repo.basePath>AlfrescoTraining</git.repo.basePath>
+                <git.repo.path></git.repo.path>
+                <git.repo.ref>master</git.repo.ref>
+		<git.filename>${git.repo.name}-${git.repo.ref}.zip</git.filename>
+		-->
+	</properties>
+
+	<modules>
+		<!-- Introduction -->
+		<module>lessons/intro-objectives</module>
+		<module>lessons/intro-prerequisites</module>
+
+		<!-- Lab - Initial Resources -->
+		<!--
+		<module>lessons/lab-resources-initial</module>
+		-->
+		
+		<!--1 Getting Started  -->
+		<module>lessons/1.1-welcome-to-alfresco</module>
+		<module>lessons/1.2-console-system-summary</module>
+		<module>lessons/1.3-example-video</module>
+		
+		<!-- 2 Consoles -->
+		<module>lessons/2.1-google-docs-console</module>
+		<module>lessons/2.2-model-and-messages-console</module>
+		<module>lessons/2.3-tenant-console</module>
+		<module>lessons/2.4-workflow-console</module>
+		<module>lessons/2.5-example-video</module>
+
+		<!-- 3 Email Services -->
+		<module>lessons/3.1-inbound-email</module>
+		<module>lessons/3.2-outbound-email</module>
+		<module>lessons/3.3-example-video</module>
+
+		<!-- 4 General -->
+		<module>lessons/4.1-license</module>
+		<module>lessons/4.2-repository-information</module>
+		<module>lessons/4.3-system-settings</module>
+		<module>lessons/4.4-example-video</module>
+
+		<!-- 5 Repository Services -->
+		<module>lessons/5.1-activities-feed</module>
+		<module>lessons/5.2-repository-server-clustering</module>
+		<module>lessons/5.3-search-services-sharding</module>
+		<module>lessons/5.4-process-engines</module>
+		<module>lessons/5.5-replication-service</module>
+		<module>lessons/5.6-search-service</module>
+		<module>lessons/5.7-subscription-service</module>
+		<module>lessons/5.8-transformation-service</module>
+		<module>lessons/5.9-example-video</module>
+		
+		<!-- 6 Support Tools -->
+		<module>lessons/6.1-overview</module>
+		<module>lessons/6.2-active-sessions</module>
+		<module>lessons/6.3-thread-information</module>
+		<module>lessons/6.4-jmx-settings</module>
+		<module>lessons/6.5-log-settings</module>
+		<module>lessons/6.6-patches-applied</module>
+		<module>lessons/6.7-system-performance</module>
+		<module>lessons/6.8-scheduled-jobs</module>
+		<module>lessons/6.9-test-transform</module>
+		<module>lessons/6.10-node-browser</module>
+		<module>lessons/6.11-example-video</module>
+				
+				
+		<!-- 7 Directories -->
+		<module>lessons/7.1-directory-management</module>
+		<module>lessons/7.2-example-video</module> 
+		
+		<!-- 8 Virtual File Systems -->
+		<module>lessons/8.1-file-servers</module>
+		<module>lessons/8.2-imap</module>
+		<module>lessons/8.3-example-video</module>
+		
+		
+		<!-- Lab - Complete Solution -->
+		<!--
+		<module>lessons/lab-resources-complete</module>
+		-->
+		
+		<!-- Summary -->
+		<module>lessons/summary-review</module>
+		<module>lessons/summary-references</module>
+		<module>lessons/summary-next</module>
+
+		<!-- Others -->
+		<module>about-course</module>
+	</modules>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>alfresco-training</id>
+			<url>https://artifacts.alfresco.com/nexus/content/repositories/training-release</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>alfresco-training</id>
+			<url>https://artifacts.alfresco.com/nexus/content/repositories/training-release</url>
+		</repository>
+	</repositories>
+
+</project>

@@ -1,0 +1,36 @@
+
+This course will ...
+
+> > Complete the paragraph above.  Here are some fragments to append to the one started above.
+> *   ... provide you with the knowledge required ...
+> *   ... provide you with the skills required ...
+> *   ... provide you with an overview of ...
+> *   ... provide you with a tutorial ...
+> *   ... introduce you to ...
+
+
+At the end of this course you will be able to:
+
+*   Verb / Noun - Something that can be easily confirmed
+*   Describe ...
+*   Configure ...
+*   Install ...
+*   Validate ...
+*   Troubleshoot ...
+
+> > *   Modify and complete the list above.  These items should not be full sentences, but short 'attention getting' words and phrases that the student can scan through.
+> *   Use [Learning Objectives](https://www.unmc.edu/facdev/resources/new-faculty-resources/teaching/BloomTaxonomy_LearningObjectives.pdf) for suggestions
+
+
+This course is targeted at the following roles:
+
+*   End Users
+*   Developers
+*   Administrators
+*   Architects
+
+> > Trim the list above to include only those audiences expected.  If an audience is missing, add it, but make sure it gets added to this template too. The roles below can also be used for where appropriate.
+
+*   Business Analysts
+*   Process Modelers
+*   Records Managers

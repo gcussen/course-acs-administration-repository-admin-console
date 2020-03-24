@@ -1,0 +1,58 @@
+
+id: "course-acs-administration-repository-admin-console"
+name: "course-acs-administration-repository-admin-console"
+description: ""
+image: "course-image.png"
+skilljarId: ""
+tags:
+- Put tags here
+- And another here
+- And so on ...
+domains:
+- skilljarId: ""
+  series:
+  - skilljarId: ""
+  - skilljarId: ""
+sections:
+- name: "Introduction"
+  skilljarId: ""
+  lessons:
+  - name: "Objectives"
+    path: "lessons/intro-objectives"
+    skilljarId: ""
+  - name: "Prerequisites"
+    path: "lessons/intro-prerequisites"
+    skilljarId: ""
+- name: "Lab Environment"
+  skilljarId: ""
+  lessons:
+  - name: "Initial Resources"
+    path: "lessons/lab-resources-initial"
+    skilljarId: ""
+- name: "Lessons"
+  skilljarId: ""
+  lessons:
+  - name: "Lesson #1"
+    path: "lessons/lesson1"
+    skilljarId: ""
+  - name: "Lesson #2"
+    path: "lessons/lesson2"
+    skilljarId: ""
+- name: "Lab Solution"
+  skilljarId: ""
+  lessons:
+  - name: "Completed Resources"
+    path: "lessons/lab-resources-complete"
+    skilljarId: ""
+- name: "Summary"
+  skilljarId: ""
+  lessons:
+  - name: "Review"
+    path: "lessons/summary-review"
+    skilljarId: ""
+  - name: "References"
+    path: "lessons/summary-references"
+    skilljarId: ""
+  - name: "Next Steps"
+    path: "lessons/summary-next"
+    skilljarId: ""
