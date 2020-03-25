@@ -1,55 +1,85 @@
-This lesson ...
+## What is this for?
+The Tenant Manager allows the Alfresco Administrator to create, enable, disable and delete Alfresco Tenants (Multi Tentants) within a single Alfresco instance.
 
-> 
-Provide an introduction to the lesson.  Let the student know what they are about to experience.  Then provide an outline of headings for the body of the lesson.
+Alfresco Content Services is designed to be used predominantly in a single instance, single-tenant (ST) environment where each tenant (for example, customer, company, or organization) runs a single instance that is installed on one server or across a cluster of servers.
 
+When Multi Tenant (MT) is enabled, the Alfresco Content Services instance is logically partitioned such that it will appear to each tenant that they are accessing a completely separate instance of the Alfresco repository. This can be useful for SaaS providers who make Alfresco Content Services available to their customers under an OEM agreement
 
-Try to have at least 2 headings to break out the lesson into smaller bits.  Remember that the name of the lesson is already a part of the page, so do not repeat it in the 1st heading.
+## When is it used?
+The Tenant Console is used when Alfresco is deployed with multiple tenants from the same Alfresco instance. When using a Tenant there are well documented [limitations in Alfresco functionality](https://docs.alfresco.com/6.2/concepts/mt-not-implemented.html). Therefore Alfresco does not advise using this feature in most cases.
 
+Multi Tenant and the Tenant Manager are provided for **limited specific use cases and only for OEM customers**.  
 
+### Example use
+In the following Tenant Console screenshot you can see the
+command `show tenants` reports `Enabled - Tenant: tenant-test (./alf-data/contentstore)`.
 
+This result occurs after creating the Tenant by executing the command `create tenant-test admin`
 
+![tenant-console](tenant-console.png)
 
-The rest of this template provides examples of several markdown features, especially those useful in our context.  You can find a more complete list on multiple sites.
+In this example, the Tenant-Test tenant will use the default Alfresco contentstore file system but will be partitioned from the default Alfresco repository at the database schema level. It is possible, using a different command (see below) to partition the tenant at the filesystem level too.
 
-*   [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-*   [GitHub.com: Basic writing and formatting syntax](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+As you can see from the screenshot this tenant is enabled and ready for use. To validate the tenant, browse to Alfresco Share and login as
+`admin@tenant-test`.
 
-This is a paragraph.  It has some **bold** and *italic* text.  Any text meant to be displayed as code or in a terminal should be put in `single tick marks`, not 'quote marks'.  This would include `filenames.zip`, `variables`, and `function_calls()`.
-
-*   Here is a list of items; notice that it is indented 3 spaces after the star.  That is a markdown best practice.
-*   This is the 2nd item
-    -   It has a sub-item using a dash instead of a star
-
-[A link](https://www.alfresco.com) is pretty easy.  If you just provide the URL, it acts like a link too: https://www.alfresco.com.  Avoid <a href="https://www.alfresco.com">HTML links</a>, although they will work.
-
-> Here is a blockquote, which is great when you are quoting from somewhere else.
-
-1.  Here is an ordered list
-2.  This is the 2nd item
-
-    Despite the extra line and because I am still indented, we are still part of the ordered list
-
-3.  Here is a 3rd item
-
-![This shows when the image is loading or does not exist](name-of-image-in-lesson-folder.png "This shows when hovering the mouse over the image")
-
-<img src="avoid-html-img.png" alt="although it will work">
-
-![Alfresco Logo](https://company-154305.frontify.com/api/screen/download/eyJpZCI6MzE4ODI3OSwidmVyc2lvbiI6IjIwMTktMDQtMjYgMTg6MjQ6MDYifQ:frontify:9838D-_nX0Rjy97c908OowHUeGrbdbi-7PWEgVA2U_A "Alfresco")
-
-| Table Heading | Column 2 | Column 3 |
-| ------------- | -------- | -------- |
-| row 1         | row 1    | row 1    |
-| row 2         | two column span    ||
+### Commands
+Here is a list of the Tenant Console commands:
 
 ```
-Preformatted text is great for showing text files, snippets, or source code.  See the example-source lesson for more examples.
+##  Tenant Commands - for administering tenants
+##
+ok> show tenants
+    List all tenants and show their details.
+
+ok> show tenant <tenant domain>
+    Show tenant details - status (ie. whether enabled or disabled) and root contentstore
+	directory.
+
+    Example:   show tenant yyy.zzz.com
+
+ok> create <tenant domain> <tenant admin password> [<root contentstore dir>]
+
+    Create empty tenant. By default the tenant will be enabled. It will have an admin
+    user called "admin@<tenant domain>" with supplied admin password. All users
+    that the admin creates, will login using "<username>@<tenant domain>".
+    The root of the contentstore directory can be optionally specified,
+	otherwise it will default to the repository default root contentstore
+	(as specified by the dir.contentstore property).
+	The default workflows will also be bootstrapped.
+
+    Examples:  create zzz.com l3tm31n /usr/tenantstores/zzz
+               create yyy.zzz.com g00dby3 /usr/tenantstores/yyy.zzz
+               create myorg h3ll0
+
+ok> changeAdminPassword <tenant domain> <tenant admin password>
+
+    Useful if the tenant's admin (admin@<tenant domain>) has forgotten their password.
+
+    Example:   changeAdminPassword yyy.zzz.com n3wpassw0rd
+
+ok> enable <tenant domain>
+
+    Enable tenant so that is active and available for new logins
+
+    Example:   enable yyy.zzz.com
+
+ok> disable <tenant domain>
+
+    Disable tenant so that is inactive. Existing logins will fail on next usage.
+
+    Example:   enable yyy.zzz.com
+
+ok> delete <tenant domain>
+
+	BETA - Delete tenant.
+
+	Note: This currently requires a server restart to clear the index threads. Also
+	tenant index directories should be deleted manually.
+
+	Example:   delete yyy.zzz.com
+
+##
+##  end
+##
 ```
-
-???+ info "Collapsible Box Heading"
-This is some collapsible text using the [Admonition Extension for flexmark](https://github.com/vsch/flexmark-java/wiki/Admonition-Extension).
-> Notice that it does not work in IDEs, but only through the SkillJar preview.
-
-??? faq "Collapsed By Default"
-This is hidden unless expanded.
